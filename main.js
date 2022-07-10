@@ -5,25 +5,25 @@ let card2
 const shuffle = () => {
     let cards = [
         {
-            name: "aaa",
+            name: "./1.webp",
         },{
-            name: "aaa",
+            name: "./1.webp",
         },{
-            name: "bbb",
+            name: "./2.webp",
         },{
-            name: "bbb",
+            name: "./2.webp",
         },{
-            name: "ccc",
+            name: "./3.webp",
         },{
-            name: "ccc",
+            name: "./3.webp",
         },{
-            name: "ddd",
+            name: "./4.webp",
         },{
-            name: "ddd",
+            name: "./4.webp",
         },{
-            name: "eee",
+            name: "./5.webp",
         },{
-            name: "eee",
+            name: "./5.webp",
         }
     ]
     let shuffledCards = []
@@ -38,14 +38,13 @@ const showCards = () => {
     cards = shuffle()
     document.getElementById("cardsContainer").innerHTML = ""
     for (let i = 0; i < cards.length; i++) {
-        console.log(cards[i].name)
-        document.getElementById("cardsContainer").innerHTML += "<button id='card"+i+"' class='card' onclick='turnCard("+i+")'>0</buttom>"
+        document.getElementById("cardsContainer").innerHTML += "<button id='card"+i+"' class='card' onclick='turnCard("+i+")'></buttom>"
     }
 }
 
 const turnCard = (i) => {
-    if (document.getElementById("card"+i).innerHTML == 0) {
-        document.getElementById("card"+i).innerHTML = cards[i].name
+    if (document.getElementById("card"+i).innerHTML == '') {
+        document.getElementById("card"+i).innerHTML = "<img src='"+cards[i].name+"' alt=''>"
         if (card1 == undefined) {
             card1 = "card"+i
         } else {
@@ -60,17 +59,17 @@ const turnCard = (i) => {
                 document.getElementById(remove[1]).style.backgroundColor = "green"
                 document.getElementById(remove[0]).style.color = "black"
                 document.getElementById(remove[1]).style.color = "black"
-                let removeCards = (remove) => {
-                    document.getElementById(remove[0]).innerHTML = 0
-                    document.getElementById(remove[1]).innerHTML = 0
-                    document.getElementById(remove[0]).style.backgroundColor = "lightgrey"
-                    document.getElementById(remove[1]).style.backgroundColor = "lightgrey"
-                    document.getElementById(remove[0]).disabled = false
-                    document.getElementById(remove[1]).disabled = false
-                    document.getElementById(remove[0]).style.display = "none"
-                    document.getElementById(remove[1]).style.display = "none"
-                }
-                setTimeout(removeCards, 2000, remove)
+                // let removeCards = (remove) => {
+                    // document.getElementById(remove[0]).innerHTML = 0
+                    // document.getElementById(remove[1]).innerHTML = 0
+                    // document.getElementById(remove[0]).style.backgroundColor = "lightgrey"
+                    // document.getElementById(remove[1]).style.backgroundColor = "lightgrey"
+                    // document.getElementById(remove[0]).disabled = false
+                    // document.getElementById(remove[1]).disabled = false
+                    // document.getElementById(remove[0]).style.display = "none"
+                    // document.getElementById(remove[1]).style.display = "none"
+                // }
+                // setTimeout(removeCards, 2000, remove)
             } else {
                 let turnBack = [card1, card2]
                 card1 = undefined
@@ -82,8 +81,8 @@ const turnCard = (i) => {
                 document.getElementById(turnBack[0]).style.color = "black"
                 document.getElementById(turnBack[1]).style.color = "black"
                 let turnCardsBack = (turnBack) => {
-                    document.getElementById(turnBack[0]).innerHTML = 0
-                    document.getElementById(turnBack[1]).innerHTML = 0
+                    document.getElementById(turnBack[0]).innerHTML = ''
+                    document.getElementById(turnBack[1]).innerHTML = ''
                     document.getElementById(turnBack[0]).style.backgroundColor = "lightgrey"
                     document.getElementById(turnBack[1]).style.backgroundColor = "lightgrey"
                     document.getElementById(turnBack[0]).disabled = false

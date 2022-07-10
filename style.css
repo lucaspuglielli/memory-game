@@ -1,13 +1,18 @@
 .card {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 300px;
     justify-content: center;
     align-items: center;
     background-color: lightgrey;
+    border-radius: 15px;
 }
 
 #cardsContainer {
     display: flex;
     flex-wrap: wrap;
+    width: 1100px;
+    height: 650px;
+    justify-content: space-evenly;
+    align-content: space-evenly;
 }
